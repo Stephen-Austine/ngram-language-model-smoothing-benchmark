@@ -1,0 +1,27 @@
+train=52,129 sentences | test=13,032 sentences
+
+1-2. Unseen test n-grams and probability-floor usage
+  n=2 laplace      unseen  26.3% | floored   0.0% | PP with floor      3,461 | without      3,461
+  n=2 good_turing  unseen  26.3% | floored   0.0% | PP with floor        963 | without        963
+  n=2 kneser_ney   unseen  26.3% | floored   0.0% | PP with floor        348 | without        348
+  n=3 laplace      unseen  62.7% | floored   0.0% | PP with floor     15,496 | without     15,496
+  n=3 good_turing  unseen  62.7% | floored   0.2% | PP with floor     72,996 | without     73,207
+  n=3 kneser_ney   unseen  62.7% | floored   0.0% | PP with floor        304 | without        304
+  n=4 laplace      unseen  81.3% | floored   0.0% | PP with floor     23,130 | without     23,130
+  n=4 good_turing  unseen  81.3% | floored  14.7% | PP with floor    270,724 | without    399,528
+  n=4 kneser_ney   unseen  81.3% | floored   0.0% | PP with floor        305 | without        305
+
+3. Probability mass on the 10 most frequent tokens (unigram level)
+  tokens: ['the', '</s>', 'a', 'and', 'of', 'to', 'is', 'in', 's', 'it']
+  raw frequency   0.248
+  Laplace         0.241
+  KN continuation 0.117
+
+4. Events scored per test set
+  n=1: 292,474  n>=2: 279,442  (unigram scores 13,032 extra <s> events, 4.5%)
+
+5. Out-of-vocabulary rate
+  3,305 / 266,410 test tokens = 1.24%
+
+6. Kneser-Ney normalisation quirk (n >= 3)
+  bigram types=393,845  V=36,334  1/(types+V) = 2.32e-06
